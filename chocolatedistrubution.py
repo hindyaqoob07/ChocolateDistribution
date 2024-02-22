@@ -107,20 +107,20 @@ print("\nSorted by price:") #This line prints a message indicating the start of 
 for chocolate in sorted_by_price: #This line iterates over the list of chocolates sorted by price
     print(chocolate.brand, ',' ,chocolate.type, ':', chocolate.price) #This line prints the chocolate brand , type and weight based on sorting by the price
 
-def binary_search(array, target, key=lambda x: x):
-    left, right = 0, len(array) - 1
+def binary_search(array, target, key=lambda x: x):#This line defines a function named binary_search that takes three parameters: array, target , and key
+    left, right = 0, len(array) - 1 #This line initializes two variables left and right to keep track of the boundaries of the search range.
 
-    while left <= right:
-        mid = (left + right) // 2
-        mid_value = key(array[mid])
-        if mid_value == target:
-            return mid
-        elif mid_value < target:
+    while left <= right: #This line starts a while loop that continues as long as the left index is less than or equal to the right index, indicating that there are still elements to search within the range.
+        mid = (left + right) // 2 #This line calculates the index of the middle element of the current search range by taking the average of left and right and rounding down to the nearest integer .
+        mid_value = key(array[mid]) #This line retrieves the value from the array at the index mid and applies the key function to it
+        if mid_value == target: #This line checks if the mid_value is equal to the target. 
+            return mid 
+        elif mid_value < target:#If the mid_value is less than the target, it means that the target element should be located in the right half of the current search range
             left = mid + 1
-        else:
+        else: #If the mid_value is greater than the target, it means that the target element should be located in the left half of the current search range
             right = mid - 1
 
-    return -1
+    return -1 #If the while loop exits without finding the target element, it means the element is not present in the array. 
 
 def find_chocolate_by_price(chocolates, price): #This line defines a function to find the chocolate by price
     index = binary_search(chocolates, price, key=lambda x: x.price) #This line calls the binary_search function with a key function to search by price
