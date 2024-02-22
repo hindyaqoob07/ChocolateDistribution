@@ -107,40 +107,6 @@ print("\nSorted by price:") #This line prints a message indicating the start of 
 for chocolate in sorted_by_price: #This line iterates over the list of chocolates sorted by price
     print(chocolate.brand, ',' ,chocolate.type, ':', chocolate.price) #This line prints the chocolate brand , type and weight based on sorting by the price
 
-class Chocolate:#This line defines a class to represent the chocolate objects
-    def __init__(self, weight, price, type, brand): #This line uses the constructor to initialize Chocolate object attributes
-        self.weight = weight # Assign weight attribute
-        self.price = price # Assign price attribute
-        self.type = type # Assign type attribute
-        self.brand = brand # Assign brand attribute
-
-def quick_sort(chocolates, key):#Define a function to represent the quick sort method to sort the chocolates
-    if len(chocolates) <= 1: #If statement to checl if the number of chocolates is less than or equal to 1
-        return chocolates #If the condition it met then it would return the list of chocolates
-    pivot = chocolates[len(chocolates) // 2] #This line chooses a pivot element from the middle of the list
-    left = [chocolate for chocolate in chocolates if key(chocolate) < key(pivot)] #This line creates a list of elements smaller than the pivot
-    middle = [chocolate for chocolate in chocolates if key(chocolate) == key(pivot)] #This line creates a list of elements equal to the pivot
-    right = [chocolate for chocolate in chocolates if key(chocolate) > key(pivot)] # This line creates a list of elements greater than the pivot
-    return quick_sort(left, key) + middle + quick_sort(right, key) #This line recursively sort and merge the left middle and right lists
-
-def sort_chocolates_by_weight(chocolates):#Define a function to sort the chocolates by weight
-    return quick_sort(chocolates, key=lambda x: x.weight) # This line calls the quick_sort function with a key function to sort by weight
-
-def sort_chocolates_by_price(chocolates): #Define a function to sort the chocolates by price
-    return quick_sort(chocolates, key=lambda x: x.price) # This line calls the quick_sort function with a key function to sort by price
-
-# The Test case
-chocolates = [
-    Chocolate(20, 25.99, "dark", "Cadbury"),
-    Chocolate(15, 15.50, "milk", "Hershey's"),
-    Chocolate(10, 10.75, "white", "Nestle"),
-    Chocolate(25, 30.25, "dark", "Godiva"),
-    Chocolate(30, 13.49, "milk", "Lindt"),
-] #This line defines a list of Chocolate objects with various attributes
-# Sorting chocolates by weight and price
-sorted_by_weight = sort_chocolates_by_weight(chocolates) #This line calls the function to sort chocolates by weight
-sorted_by_price = sort_chocolates_by_price(chocolates) #This line calls the function to sort chocolates by price
-
 def binary_search(array, target, key=lambda x: x):
     left, right = 0, len(array) - 1
 
