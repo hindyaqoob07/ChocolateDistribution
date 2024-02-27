@@ -131,27 +131,27 @@ def find_chocolate_by_weight(chocolates, weight): #This line defines a function 
     return chocolates[index] if index != -1 else None #This line returns the chocolate found by weight if it exists, otherwise return None
 
 # The Test cases for searching by price
-chocolate_by_price = find_chocolate_by_price(sorted_by_price, 30.25) #This line calls the function to find chocolate by price
-if chocolate_by_price: #This line checks if chocolate by price is found
-    print("Chocolate found by price :", chocolate_by_price.brand,',' ,chocolate_by_price.type, '(price:', chocolate.price, ')') #This line prints the chocolate brand and type according to the chosen price
-else: #If chocolate by price is not found
-    print("Chocolate not found by price ") #This line prints a message indicating chocolate not found by price
+chocolate_by_price = find_chocolate_by_price(sorted_by_price, 30.25)  # This line calls the function to find chocolate by price
+if chocolate_by_price:  # This line checks if chocolate by price is found
+    print("Student holding chocolate with price 30.25:", students[chocolates.index(chocolate_by_price)])  # This line prints the student holding the chocolate with the chosen price
+else:  # If chocolate by price is not found
+    print("Chocolate not found by price")
 
-chocolate_by_price_not_found = find_chocolate_by_price(sorted_by_price, 20) #This line calls the function to find chocolate by price (not found case)
-if chocolate_by_price_not_found: #This line checks if chocolate by price is found (not found case)
-    print("Chocolate found by price:", chocolate_by_price_not_found.weight, chocolate_by_price_not_found.price, chocolate_by_price_not_found.type, chocolate_by_price_not_found.brand) #This line prints the chocolate brand and type according to the chosen price (not found case)
-else: #If chocolate by price is not found (not found case)
-    print("Chocolate not found by price") #This line prints a message indicating chocolate not found by price
+chocolate_by_price_not_found = find_chocolate_by_price(sorted_by_price, 20)  # This line calls the function to find chocolate by price (not found case)
+if chocolate_by_price_not_found:  # This line checks if chocolate by price is found (not found case)
+    print("Student holding chocolate with price 20:", students[chocolates.index(chocolate_by_price_not_found)])  # This line prints the student holding the chocolate with the chosen price (not found case)
+else:  # If chocolate by price is not found (not found case)
+    print("Chocolate not found by price")
 
 # The Test cases for searching by weight
-chocolate_by_weight = find_chocolate_by_weight(sorted_by_weight, 10) #This line calls the function to find chocolate by weight
-if chocolate_by_weight: #This line checks if chocolate by weight is found
-    print("Chocolate found by weight:", chocolate_by_price.brand,',' ,chocolate_by_price.type, '(weight:', chocolate.weight, ')') #This line prints the chocolate brand and type according to the chosen weight
-else: #If chocolate by price is not found
-    print("Chocolate not found by weight") #This line prints a message indicating chocolate not found by price
+chocolate_by_weight = find_chocolate_by_weight(sorted_by_weight, 10)  # This line calls the function to find chocolate by weight
+if chocolate_by_weight:  # This line checks if chocolate by weight is found
+    print("Student holding chocolate with weight 10:", students[chocolates.index(chocolate_by_weight)])  # This line prints the student holding the chocolate with the chosen weight
+else:  # If chocolate by price is not found
+    print("Chocolate not found by weight")
 
-chocolate_by_weight_not_found = find_chocolate_by_weight(sorted_by_weight, 12) #This line calls the function to find chocolate by weight (not found case)
-if chocolate_by_weight_not_found: #This line checks if chocolate by price is found (not found case)
-    print("Chocolate found by weight:", chocolate_by_weight_not_found.weight, chocolate_by_weight_not_found.price, chocolate_by_weight_not_found.type, chocolate_by_weight_not_found.brand)#This line prints the chocolate brand and type according to the chosen weight (not found case)
-else: #If chocolate by price is not found (not found case)
-    print("Chocolate not found by weight ")#This line prints a message indicating chocolate not found by price
+chocolate_by_weight_not_found = find_chocolate_by_weight(sorted_by_weight, 12)  # This line calls the function to find chocolate by weight (not found case)
+if chocolate_by_weight_not_found:  # This line checks if chocolate by price is found (not found case)
+    print("Student holding chocolate with weight 12:", students[chocolates.index(chocolate_by_weight_not_found)])  # This line prints the student holding the chocolate with the chosen weight (not found case)
+else:  # If chocolate by price is not found (not found case)
+    print("Chocolate not found by weight")
